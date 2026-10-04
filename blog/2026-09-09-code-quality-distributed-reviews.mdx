@@ -1,52 +1,41 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<blog_post>
-  <header>
-    <slug>code-quality-distributed-reviews</slug>
-    <headline>Code Quality at Scale: Best Practices for Managing Distributed Peer Reviews</headline>
-    <author_byline>Amir Abdulnasser</author_byline>
-    <post_category>Engineering</post_category>
-    <featured_image>./img/code_quality_distributed_reviews-header.jpg</featured_image>
-    <publish_date>2026-08-17</publish_date>
-    <description>How to manage code reviews across distributed teams, reduce review bottlenecks, and maintain high engineering standards.</description>
-  </header>
+---
+slug: code-quality-distributed-reviews
+title: "Code Quality at Scale: Best Practices for Managing Distributed Peer Reviews"
+description: "How to manage code reviews across distributed teams, reduce review bottlenecks, and maintain high engineering standards."
+authors: [Amir Abdulnasser]
+tags: [Engineering]
+image: ./img/code-quality-distributed-reviews-header.jpg
+---
 
-  <introduction>
-    In multi-time zone engineering teams, a code review can be the largest bottleneck in development[cite: 4]. If a pull request is opened in one time zone and it's not reviewed for 12 hours in another, the momentum can be lost and there will be huge merge conflicts down the road[cite: 4]. To effectively deal with distributed peer reviews, standards need to be clear, PR sizes need to be strict and feedback protocols need to be asynchronous[cite: 4].
-  </introduction>
+# Code Quality at Scale: Best Practices for Managing Distributed Peer Reviews
 
-  <main_content>
-    <section>
-      <sub_headline>Maintain small and atomic PRs</sub_headline>
-      <body>A distributed team is a nightmare in case of large pull requests with multiple files[cite: 4]. These result in short-term evaluations, slo-mo feedback cycles and context-switching[cite: 4].</body>
-      <list_item>Keep PR scope small: Approve small and self-contained pull requests that can be reviewed in less than 15 minutes[cite: 4].</list_item>
-      <list_item>Take advantage of feature flags: Keep large branches open for weeks to get features completed, or switch them off and on as you go along[cite: 4]. Don't leave big branches open for weeks or months, use feature flags: merge all sub-features behind feature flags progressively[cite: 4].</list_item>
-    </section>
+In multi-time zone engineering teams, a code review can be the largest bottleneck in development[cite: 5]. If a pull request is opened in one time zone and it's not reviewed for 12 hours in another, the momentum can be lost and there will be huge merge conflicts down the road[cite: 5]. To effectively deal with distributed peer reviews, standards need to be clear, PR sizes need to be strict and feedback protocols need to be asynchronous[cite: 5].
 
-    <section>
-      <sub_headline>Be consistent with Code Style &amp; Automated Checks</sub_headline>
-      <body>Human reviewers shouldn't waste time discussing formatting, linting or simple test coverage[cite: 4]. A developer should never be tagged for review when the basic stuff is not automated[cite: 4].</body>
-      <list_item>Automate linters and CI: Run automated CI/CD pipelines and stop syntax errors, code style issues, and failing unit tests from reaching the notification pings[cite: 4]. Take advantage of automated CI/CD to detect syntax errors, code style violations, and broken unit tests before sending out notification pings[cite: 4].</list_item>
-      <list_item>Make review checklists explicit: Make explicit a review checklist for parameters such as security, performance impact, edge cases and so on, so that the reviewers know what to concentrate on[cite: 4]. Provide a clear checklist of security checks, performance implications, and edge cases to review so that reviewers have a clear focus of what to pay attention to[cite: 4].</list_item>
-    </section>
+## Maintain small and atomic PRs
 
-    <section>
-      <sub_headline>Set up Asynchronous Review SLAs</sub_headline>
-      <body>Don't wait forever to have a code review[cite: 4]. Clear expectations for how long responses will take streamlines the flow of PRs through the pipeline and avoids constant interruptions of deep work[cite: 4]. Time is money and without a code review you are wasting time[cite: 4].</body>
-      <list_item>Set reasonable turnaround windows: Have a standard SLA of 4-8 hours for PR reviews for distributed engineering teams to plan on focus blocks[cite: 4].</list_item>
-      <list_item>Rotate duties of reviewing code: Utilize asynchronous work strategies by having specific primary reviewers or rotating who gets to review code each day to avoid having too much code reviewed at once by one person[cite: 4]. Avoid having code reviews accumulate on one person[cite: 4].</list_item>
-    </section>
-  </main_content>
+A distributed team is a nightmare in case of large pull requests with multiple files[cite: 5]. These result in short-term evaluations, slo-mo feedback cycles and context-switching[cite: 5].
 
-  <engagement>
-    <call_to_action>
-      <headline>Looking to Start Your Distributed Team?</headline>
-      <text>Want to create an elite engineering team geared toward high performance and code quality and async workflow? Let Zemenay Tech get you the best tech talent in the world with our specialized IT staff augmentation services[cite: 4].</text>
-      <link>https://zemenaytech.com/</link>
-    </call_to_action>
-    <social_buttons>
-      <platform name="Facebook">https://facebook.com/zemenaytech</platform>
-      <platform name="X">https://x.com/zemenaytech</platform>
-      <platform name="LinkedIn">https://linkedin.com/company/zemenaytech</platform>
-    </social_buttons>
-  </engagement>
-</blog_post>
+- **Keep PR scope small:** Approve small and self-contained pull requests that can be reviewed in less than 15 minutes[cite: 5].
+- **Take advantage of feature flags:** Keep large branches open for weeks to get features completed, or switch them off and on as you go along[cite: 5]. Don't leave big branches open for weeks or months, use feature flags: merge all sub-features behind feature flags progressively[cite: 5].
+
+## Be consistent with Code Style & Automated Checks
+
+Human reviewers shouldn't waste time discussing formatting, linting or simple test coverage[cite: 5]. A developer should never be tagged for review when the basic stuff is not automated[cite: 5].
+
+- **Automate linters and CI:** Run automated CI/CD pipelines and stop syntax errors, code style issues, and failing unit tests from reaching the notification pings[cite: 5]. Take advantage of automated CI/CD to detect syntax errors, code style violations, and broken unit tests before sending out notification pings[cite: 5].
+- **Make review checklists explicit:** Make explicit a review checklist for parameters such as security, performance impact, edge cases and so on, so that the reviewers know what to concentrate on[cite: 5]. Provide a clear checklist of security checks, performance implications, and edge cases to review so that reviewers have a clear focus of what to pay attention to[cite: 5].
+
+## Set up Asynchronous Review SLAs
+
+Don't wait forever to have a code review[cite: 5]. Clear expectations for how long responses will take streamlines the flow of PRs through the pipeline and avoids constant interruptions of deep work[cite: 5]. Time is money and without a code review you are wasting time[cite: 5].
+
+- **Set reasonable turnaround windows:** Have a standard SLA of 4-8 hours for PR reviews for distributed engineering teams to plan on focus blocks[cite: 5].
+- **Rotate duties of reviewing code:** Utilize asynchronous work strategies by having specific primary reviewers or rotating who gets to review code each day to avoid having too much code reviewed at once by one person[cite: 5]. Avoid having code reviews accumulate on one person[cite: 5].
+
+---
+
+## Looking to Start Your Distributed Team?
+
+Want to create an elite engineering team geared toward high performance and code quality and async workflow? Let Zemenay Tech get you the best tech talent in the world with our specialized IT staff augmentation services[cite: 5]. [https://zemenaytech.com/](https://zemenaytech.com/)[cite: 5]
+
+[Facebook](https://facebook.com/zemenaytech) | [X](https://x.com/zemenaytech) | [LinkedIn](https://linkedin.com/company/zemenaytech)[cite: 5]
