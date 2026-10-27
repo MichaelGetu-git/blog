@@ -1,0 +1,40 @@
+---
+slug: memory-leak-on-tuesdays-engineering-war-story
+title: "The Memory Leak on Tuesdays: An Engineering War Story"
+description: "Chasing a ghost bug that only appears once a week is a brutal test of endurance. Read how our engineering team tracked down a stubborn memory leak."
+authors: [Amir Abdulnasser]
+tags: [war-story, nodejs, debugging, memory-leak, backend, engineering-culture]
+image: ./img/memory-leak-on-tuesdays-engineering-war-story.png
+---
+
+# The Memory Leak on Tuesdays: An Engineering War Story
+
+It began as a little blip[cite: 28]. Our primary microservice that's built with Node.js will have a memory spike every Tuesday at 9:00 AM UTC[cite: 28]. The containers will reach their limits and will crash with an Out of Memory (OOM) error at 11:00 AM and restart[cite: 28].
+
+In the realm of Offshore Software Development, when a bug shows up once a week, it's a tough battle of stamina[cite: 28]. Our Distributed Engineering Teams were unable to understand[cite: 28]. There hadn't been a significant update to the code in two weeks, traffic was as expected, and CPU was flat[cite: 28]. But the servers would lie in wait on every Tuesday and slowly and quietly snap and die[cite: 28].
+
+We played off the beaten path[cite: 28]. Was it a bad cron job? No[cite: 28]. Was it lock of the tables in the databases on a weekly basis? No[cite: 28].
+
+This is where Remote Team Management comes into play[cite: 28]. Engineers were waiting around the world for Tuesday morning to come by, waiting to stare at DataDog dashboards all over the continents[cite: 28]. We've developed a Remote Work Culture based on trust and autonomy, and this thing was causing a lot of friction[cite: 28]. It was the Asynchronous Work Strategies that it threw off balance because everyone was suddenly compelled to be online synchronously in order to see the perpetrator in real-time[cite: 28].
+
+It threatened our Remote Talent Retention, too – our lead backend engineer spent three back-to-back weekends developing custom memory profiling tools instead of taking a break[cite: 28]. In fact, during Remote Developer Onboarding, we began joking that Tuesdays were cursed[cite: 28]. For our front-line Distributed Agile Teams, however, it wasn't funny any more[cite: 28]. The clients' trust was being eroded because of the erratic downtimes[cite: 28].
+
+In the fourth week a breakthrough was made[cite: 28]. It was a huge success of Cross-Cultural Team Integration[cite: 28]. We recently recruited a developer from our Borderless Hiring program that detected a bizarre jump in a report in a legacy reporting module[cite: 28].
+
+Once a week, an automated script was producing weekly compliance reports to meet International Tech Compliance standards for one of our FinTech clients every Tuesday morning[cite: 28]. The legacy script was performing read operations on the database to pull 500,000 rows into memory at once to create the CSV[cite: 28].
+
+However, why just on Tuesdays?[cite: 28]
+
+This was due to a custom weekly snapshot request by a legacy client two years back, and the query had only been written as a global scope, thus pulling all data from all clients to memory each Tuesday even if one client wanted the snapshot[cite: 28].
+
+The data extraction method was changed to the use of streams in Node.js[cite: 28]. The size of memory was immediately reduced from 4GB to 40MB without any fluctuations[cite: 28]. It was finally Tuesday and the curse had been lifted[cite: 28].
+
+---
+
+This war story is just one of many examples showing that collective intelligence is the promise of the Future of Work[cite: 28]. Systemic and time-zone-spanning bugs are not cured by the use of more expensive monitoring tools[cite: 28]. You tackle them with great Global Remote Talent, who can dive deep into the codebase and ask the appropriate questions[cite: 28].
+
+## Zemenay Tech
+
+Zemenay Tech is an Ethiopian-based tech company offering premium IT Staff Augmentation[cite: 28]. We take your Tech Talent Acquisition process to the next level, and link you with vetted developers who don't merely code, they crack the toughest architectural puzzles[cite: 28].
+
+Contact us today to get a free consultation.[cite: 28]
