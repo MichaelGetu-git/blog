@@ -1,0 +1,105 @@
+---
+slug: technical-seo-checklist-new-website
+title: 'The Technical SEO Checklist for a New Website'
+description: 'Crawling, indexing, Core Web Vitals, redirects, sitemaps and structured data: the technical SEO checks every new website needs before and after launch.'
+authors: [michael]
+tags: [seo, web-development, websites, launch]
+keywords: [technical SEO checklist, SEO for new website, Core Web Vitals, website migration SEO, structured data, XML sitemap]
+featured: false
+---
+
+Great content cannot rank if search engines cannot crawl it, understand it or load it quickly. Technical SEO is the set of foundations that make the rest of your search strategy possible, and a new website is the cheapest moment to get them right. Fixing them after launch means retrofitting templates, chasing broken links and waiting for search engines to notice.
+
+This checklist covers what to set up during the build and what to verify on launch day. Developers should own most of it, but everyone involved in the project should know it exists.
+
+{/* truncate */}
+
+## Crawling and indexing
+
+Search engines must be able to find every page you want ranked, and only those pages.
+
+- **robots.txt** allows crawling of the live site and points to the XML sitemap
+- **XML sitemap** lists every indexable page, updates automatically when content changes, and excludes redirects, error pages and anything marked noindex
+- **No leftover noindex.** Staging sites are usually blocked from search engines, and the block is regularly carried into production by accident. Check every template on launch day.
+- **Canonical tags** on every page, pointing to the preferred version of the URL, so duplicates such as tracking parameters or alternative paths do not compete with each other
+- **One version of the domain.** Pick either www or the bare domain, redirect the other to it, and serve everything over HTTPS
+- **Search Console and Bing Webmaster Tools** verified, with the sitemap submitted
+
+## Site structure and URLs
+
+- **Short, readable URLs** that describe the page: `/services/call-center`, not `/page?id=482`
+- **A logical hierarchy** where important pages are a few clicks from the homepage
+- **Internal links** between related pages, using descriptive anchor text rather than "click here"
+- **Breadcrumbs** on deeper pages, which help both users and search engines understand structure
+- **A useful 404 page** that returns a real 404 status code, not a 200
+
+## Redirects when replacing an old site
+
+If the new site replaces an existing one, this is the section that protects the traffic you already have.
+
+1. Export every URL from the old site, including blog posts, images and PDFs that receive visits
+2. Map each old URL to the most relevant new one
+3. Implement permanent (301) redirects from old to new, one to one where possible
+4. Avoid redirect chains, where one redirect leads to another
+5. After launch, crawl the old URL list and confirm every one ends on a live page
+
+Redirecting everything to the homepage is not a migration. It throws away the relevance each old page had built.
+
+## Page experience and Core Web Vitals
+
+Google's Core Web Vitals measure real-world loading, responsiveness and visual stability. The thresholds for a good experience are:
+
+| Metric | Measures | Good |
+| --- | --- | --- |
+| Largest Contentful Paint (LCP) | How quickly the main content appears | 2.5 seconds or less |
+| Interaction to Next Paint (INP) | How quickly the page responds to input | 200 milliseconds or less |
+| Cumulative Layout Shift (CLS) | How much the layout jumps while loading | 0.1 or less |
+
+To meet them:
+
+- Serve images in modern formats such as WebP or AVIF, sized for the device, and lazy-load those below the fold
+- Set width and height on images and embeds so the layout does not shift
+- Limit third-party scripts such as chat widgets, trackers and heatmaps, and load them after the main content
+- Preload the main font files and the hero image
+- Test on a mid-range phone over a mobile connection, not just a fast laptop
+
+Google indexes the mobile version of your site first, so the mobile experience is the one that counts.
+
+## Content signals in the templates
+
+- **A unique title tag** on every page, describing the page with the main topic near the start, roughly 50 to 60 characters
+- **A meta description** on every page, around 150 to 160 characters, written to earn the click
+- **One H1 per page,** with a logical heading structure below it
+- **Descriptive alt text** on meaningful images
+- **Open Graph and social tags,** so shared links show the right title, description and image
+
+## Structured data
+
+Structured data in JSON-LD format helps search engines understand what a page represents and can make results eligible for richer displays. For most business websites, start with:
+
+- **Organization** on the homepage, with your logo and social profiles
+- **BreadcrumbList** on pages with breadcrumbs
+- **Article or BlogPosting** on blog posts, with dates and author
+- **Product** on product pages, with price and availability
+- **LocalBusiness** if you serve customers at a physical location
+
+Validate it with Google's Rich Results Test before launch.
+
+## JavaScript and rendering
+
+If the site is built with a JavaScript framework, make sure the important content and links are present in the HTML the server sends, not added only after scripts run. Server-side rendering or static generation, as frameworks such as Next.js provide, solves this. The platform trade-offs are covered in [Next.js vs WordPress vs Webflow](https://zemenaytech.com/blog/nextjs-vs-wordpress-vs-webflow).
+
+## Multilingual sites
+
+If you publish in more than one language or for more than one country, use hreflang annotations to tell search engines which version serves which audience, and give each language its own URL rather than switching content on the same page.
+
+## The first month after launch
+
+- Check Search Console daily for crawl errors and indexing problems for the first two weeks
+- Watch organic traffic and rankings for key pages against the old site's baseline
+- Fix any 404s that appear from old links you missed
+- Re-test Core Web Vitals once real-user data starts arriving
+
+Include these requirements in your brief from the start, as described in [how to write a website brief](https://zemenaytech.com/blog/how-to-write-a-website-brief), so they are built in rather than bolted on.
+
+Search best practices are built into every website our [tech outsourcing](https://zemenaytech.com/hire-by-tech-stack) team delivers from the first template, along with deployment, testing across devices and support after launch.

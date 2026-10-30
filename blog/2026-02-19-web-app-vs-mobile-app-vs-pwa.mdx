@@ -1,0 +1,86 @@
+---
+slug: web-app-vs-mobile-app-vs-pwa
+title: 'Web App, Mobile App or PWA: What Should You Build First?'
+description: 'Native apps, cross-platform apps, web apps and progressive web apps compared on cost, reach, features and speed to market, with advice on what to build first.'
+authors: [michael]
+tags: [software-development, mobile-apps, web-development, mvp]
+keywords: [web app vs mobile app, PWA vs native app, progressive web app, cross platform app development, Flutter vs React Native, what to build first]
+featured: false
+---
+
+"We need an app" is often the first sentence of a new product conversation. Sometimes that is exactly right. Often, what the business needs is software that customers can use on their phones, and a mobile app is only one way to deliver it, and not always the fastest or cheapest.
+
+Before you commit to a build, it is worth understanding the four main options: a responsive web app, a progressive web app, a cross-platform mobile app and a native mobile app.
+
+{/* truncate */}
+
+## Responsive web app
+
+A web application that runs in the browser and adapts to any screen size.
+
+**Strengths:** one codebase for every device; no app store approval; instant updates for every user; easy to find through search; users can try it without installing anything.
+
+**Limitations:** no home screen presence unless the user bookmarks it; limited access to some device features; usually no offline use.
+
+**Good for:** SaaS products, dashboards, booking and ordering systems, marketplaces, internal tools, and most MVPs.
+
+## Progressive web app (PWA)
+
+A web app with extra capabilities that make it behave more like an installed app.
+
+**Strengths:** installable to the home screen with its own icon; can work offline or on poor connections through caching; can send push notifications, including on iPhones for web apps added to the home screen in recent iOS versions; still one codebase, updated instantly.
+
+**Limitations:** access to device features is narrower than for native apps, and support varies between platforms, with iOS generally more restrictive than Android; presence in app stores is limited, although Android apps can be packaged from a PWA; users are less familiar with installing web apps.
+
+**Good for:** products used repeatedly by the same people, such as field service tools, loyalty programs, ordering apps and content products, especially in markets with unreliable connectivity.
+
+## Cross-platform mobile app
+
+A real mobile app for iOS and Android built from one codebase with a framework such as Flutter or React Native.
+
+**Strengths:** app store presence; access to most device features, including camera, location, background tasks and biometrics; near-native performance for most apps; far less work than building two native apps.
+
+**Limitations:** app store review and release processes; updates depend on users installing them; some platform-specific work is still needed; you usually also need a website.
+
+**Good for:** consumer apps where store presence matters, apps that rely heavily on device features, and products whose users expect to download an app.
+
+## Native mobile app
+
+Separate apps built specifically for each platform, typically Swift for iOS and Kotlin for Android.
+
+**Strengths:** best possible performance and access to every platform feature as soon as it is released; the most polished platform-specific experience.
+
+**Limitations:** two codebases, often two teams, and roughly double the development and maintenance effort.
+
+**Good for:** apps with demanding performance needs, such as games, advanced media or heavy use of new hardware features, or products large enough to justify two specialist teams.
+
+## Comparing the options
+
+| | Web app | PWA | Cross-platform | Native |
+| --- | --- | --- | --- | --- |
+| Codebases | 1 | 1 | 1, plus some platform code | 2 |
+| App store presence | No | Limited | Yes | Yes |
+| Device features | Basic | Moderate | Most | All |
+| Offline use | Rarely | Yes | Yes | Yes |
+| Updates | Instant | Instant | Through stores | Through stores |
+| Relative cost | Lowest | Low | Medium | Highest |
+| Time to market | Fastest | Fast | Moderate | Slowest |
+
+## What we usually recommend building first
+
+For most new products, start with a responsive web app, and add PWA features if users return often or connectivity is a concern. It reaches every device, launches fastest, costs least, and lets you learn what users actually do before you invest in app store releases. This fits the discipline described in [how to scope an MVP you can actually ship](https://zemenaytech.com/blog/how-to-scope-an-mvp).
+
+Build a mobile app first when:
+
+- The core experience depends on device features the web cannot provide well
+- Your users expect an app and will look for you in the app stores
+- Usage is frequent and personal, such as daily habits or messaging
+- Competitors' apps set the expectation in your market
+
+When you do go mobile, cross-platform is the right default for most businesses. Choose fully native only when you have a specific performance or platform reason.
+
+## Plan for both eventually
+
+Many successful products end up with both a web app and mobile apps sharing the same back end and APIs. Designing that back end cleanly from the start makes adding the second front end much easier later. Keep the code in your own repository and the cloud accounts in your own name from day one, whoever builds it.
+
+Our [tech outsourcing](https://zemenaytech.com/hire-by-tech-stack) teams build web apps, PWAs and cross-platform mobile apps, and we will recommend the option that gets your product in front of users fastest without boxing you in later. Examples are in [our work](https://zemenaytech.com/our-work).

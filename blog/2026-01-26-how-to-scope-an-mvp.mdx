@@ -1,0 +1,90 @@
+---
+slug: how-to-scope-an-mvp
+title: 'How to Scope an MVP You Can Actually Ship in 12 Weeks'
+description: 'Most MVPs fail because they are not minimal. A practical method for scoping a first version, cutting features and planning a 12-week build.'
+authors: [michael]
+tags: [software-development, mvp, project-planning, tech-outsourcing]
+keywords: [how to scope an MVP, MVP development, minimum viable product, MVP features, startup product development, outsource MVP]
+featured: false
+---
+
+Almost every first product version starts as a minimum viable product and grows into something else. One more feature for the investor demo, one more integration a potential customer asked about, an admin panel that "we'll need eventually". Six months later the MVP is still not launched, the budget is gone, and nobody has learned whether customers want it.
+
+Scoping an MVP is mostly the discipline of saying no. Here is a method for doing it, and a realistic plan for building the result in about twelve weeks.
+
+{/* truncate */}
+
+## Start with the one question
+
+An MVP exists to answer a question as cheaply as possible. Before listing any features, write that question down:
+
+- "Will small accounting firms pay a monthly fee to automate client document collection?"
+- "Will restaurant managers use an app to schedule shifts instead of a group chat?"
+- "Will customers book and pay for home repairs online without a phone call?"
+
+Every feature you consider should be judged against it. If a feature does not help answer the question, it is not in the MVP, however useful it might be later.
+
+## Describe the core journey
+
+Next, write the single journey that proves the idea, from the user's first visit to the moment they get value. For a booking product, it might be:
+
+1. Customer finds the service and sees available times
+2. Customer books a time and pays
+3. Provider receives the booking and confirms
+4. Customer receives a confirmation and a reminder
+5. Provider marks the job complete
+
+That journey is your MVP's backbone. Everything else, such as reviews, loyalty points, multiple locations or analytics dashboards, waits.
+
+## Sort features ruthlessly
+
+List every feature anyone has suggested, then sort them into four groups, a method often called MoSCoW:
+
+| Group | Meaning | Example |
+| --- | --- | --- |
+| Must have | The core journey breaks without it | Booking, payment, confirmation email |
+| Should have | Important, but there is a workaround | Rescheduling, which can be done by email at first |
+| Could have | Nice, low effort, only if time allows | Saved payment details |
+| Won't have (now) | Explicitly postponed | Reviews, referral program, mobile app |
+
+Be strict about the first group. A useful test: if a feature could be handled manually by your team for the first fifty customers, it is not a must-have.
+
+## Do things by hand
+
+Many successful products started with a person quietly doing work that later became software. Approve new accounts manually. Send reports from a spreadsheet. Match customers to providers yourself. These manual steps are slow and do not scale, which is fine; you do not need to scale until you know the idea works, and doing the work by hand teaches you exactly what to automate.
+
+## Buy what is not your product
+
+Every hour spent building something generic is an hour not spent on what makes your product different. Use established services for:
+
+- **Authentication:** sign-up, login and password resets
+- **Payments:** a payment provider such as Stripe, rather than custom billing
+- **Email and notifications:** a transactional email service
+- **Admin tools:** a simple internal dashboard or even direct database tools at first
+- **Analytics:** an off-the-shelf product analytics tool
+
+## Choose a platform that can grow
+
+An MVP should be minimal in features, not in quality. Build the core on a mainstream stack that your future team can extend, for example a web app first rather than separate native iOS and Android apps, which roughly doubles the work. The trade-offs are covered in more detail in [Next.js vs WordPress vs Webflow](https://zemenaytech.com/blog/nextjs-vs-wordpress-vs-webflow) for sites, and they apply to apps too: pick the boring, well-supported option.
+
+## A realistic 12-week plan
+
+| Weeks | Phase | Output |
+| --- | --- | --- |
+| 1 to 2 | Discovery | Confirmed scope, user journey, technical architecture |
+| 3 to 4 | Design | Clickable prototype of the core journey, tested with a few real users |
+| 5 to 10 | Build | Working product in two-week sprints, demoed at the end of each |
+| 11 | Testing | Bug fixing, device testing, security basics, real payment tests |
+| 12 | Launch | Production release to a first group of users, with analytics in place |
+
+Two habits keep this on track. First, a fixed launch date with a flexible scope: if something has to give, it is a should-have, not the date. Second, a demo of working software at the end of every sprint, so problems surface in week six rather than week twelve.
+
+## Pick the right contract model
+
+MVPs change as you learn, which usually makes a pure fixed-price contract a poor fit for the build phase. Many teams combine a short fixed-price discovery with time and materials for the build, capped per sprint. We explain the options in [fixed price vs time and materials vs dedicated team](https://zemenaytech.com/blog/fixed-price-vs-time-and-materials-vs-dedicated-team).
+
+## After launch
+
+Launching the MVP is the start of learning, not the end of the project. Plan for the weeks after: talking to every early user, watching where they get stuck, and having development capacity ready to act on what you find.
+
+Our [tech outsourcing](https://zemenaytech.com/hire-by-tech-stack) team builds MVPs this way: deliverables, timelines and milestones defined up front, structured phases with regular check-ins, and support after launch as the product grows.

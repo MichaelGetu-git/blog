@@ -1,0 +1,91 @@
+---
+slug: website-accessibility-basics
+title: 'Website Accessibility Basics: Meeting WCAG Without Starting Over'
+description: 'What website accessibility means in practice, why it matters legally and commercially, and the WCAG fixes that make the biggest difference on an existing site.'
+authors: [michael]
+tags: [web-development, accessibility, websites, quality-assurance]
+keywords: [website accessibility, WCAG compliance, accessible website design, web accessibility checklist, European Accessibility Act, ADA website]
+featured: false
+---
+
+Accessibility is often treated as a specialist topic, something for government sites or large enterprises with compliance teams. In practice it affects every business with a website. People with visual, motor, hearing or cognitive disabilities make up a significant share of any audience, and many more people use the same features in everyday situations: zooming in on a phone, navigating with a keyboard, reading in bright sunlight, or watching a video with the sound off.
+
+The good news is that you rarely need to start over. Most accessibility problems on business websites come from a small number of common mistakes, and fixing those makes a large difference.
+
+{/* truncate */}
+
+## The standard: WCAG
+
+The Web Content Accessibility Guidelines (WCAG), published by the W3C, are the reference standard. The current version is WCAG 2.2. Guidelines are grouped into three levels, A, AA and AAA, and level AA is the target most laws and policies point to.
+
+WCAG is organized around four principles. Content must be:
+
+- **Perceivable:** people can see or hear it, or access an alternative
+- **Operable:** people can use it with a keyboard, a mouse, touch or assistive technology
+- **Understandable:** content and controls behave predictably and clearly
+- **Robust:** it works with current and future browsers and assistive technologies
+
+## Why it matters beyond doing the right thing
+
+**Legal exposure.** In the United States, website accessibility lawsuits under the Americans with Disabilities Act are common, particularly against e-commerce sites. In the European Union, the European Accessibility Act has applied since June 2025 and covers many consumer-facing digital services, including e-commerce, with exemptions for the smallest businesses. Other countries have their own rules.
+
+**More customers.** An inaccessible checkout loses sales. An inaccessible contact form loses leads.
+
+**Better search and usability.** Many accessibility practices, such as meaningful headings, descriptive links, alt text and fast, well-structured pages, are also good for search engines and for every user.
+
+## The fixes that matter most
+
+### 1. Text alternatives for images
+
+Every meaningful image needs alt text that describes its purpose: "Team lead reviewing a call recording with an agent", not "image1.jpg" or "photo". Purely decorative images should have empty alt text so screen readers skip them. Charts and infographics need the key information in text nearby.
+
+### 2. Color contrast
+
+Text must stand out from its background. WCAG AA requires a contrast ratio of at least 4.5 to 1 for normal text and 3 to 1 for large text. Light grey text on white, a common design choice, frequently fails. Free contrast checkers make this easy to test, and fixing it is usually a small change to your color tokens.
+
+### 3. Keyboard navigation
+
+Everything you can do with a mouse should be possible with a keyboard alone: menus, forms, modals, sliders and checkout. Press Tab through your key pages and check that:
+
+- Focus moves in a logical order
+- You can always see which element has focus
+- You never get trapped inside a component
+- Pop-ups can be closed with the Escape key
+
+### 4. Forms
+
+Forms are where accessibility problems cost the most money.
+
+- Every field has a visible label connected to it in the code
+- Required fields are marked in text, not only by color
+- Error messages explain what went wrong and how to fix it, next to the field
+- Errors are announced to screen reader users, not just shown visually
+
+### 5. Headings and structure
+
+Use one H1 per page and a logical heading order beneath it. Screen reader users often navigate by headings, the way sighted users skim. Use real lists for lists and real buttons for buttons, rather than styled divs that look right but behave wrongly.
+
+### 6. Links and buttons
+
+Link text should make sense on its own. "Read our pricing guide" works; "click here" repeated ten times does not. Buttons and links should be large enough to tap comfortably on a phone.
+
+### 7. Media
+
+Videos need captions. Audio content needs a transcript. Nothing should play automatically with sound, and any animation that moves for more than a few seconds should be possible to pause.
+
+## How to test
+
+- **Automated checkers** such as Lighthouse or axe catch a useful share of problems quickly, especially contrast, missing alt text and missing labels
+- **Keyboard testing** catches what automated tools miss in navigation and interaction
+- **Screen reader testing** with VoiceOver on Mac and iPhone or NVDA on Windows shows what the experience is really like
+- **Testing with disabled users,** where possible, gives the most reliable picture of all
+
+Automated tools alone cannot confirm a site is accessible. Use them as a first pass, not a certificate.
+
+## Build it in from now on
+
+Fixing existing pages matters, but the bigger win is making accessibility part of how new work is done: accessible components in the design system, accessibility checks in the [website launch checklist](https://zemenaytech.com/blog/website-launch-checklist), and acceptance criteria that include keyboard and screen reader use. If you are planning a larger update, our guide to deciding between a [website redesign or refresh](https://zemenaytech.com/blog/website-redesign-or-refresh) explains how to fold accessibility in.
+
+Accessibility is part of the testing our [tech outsourcing](https://zemenaytech.com/hire-by-tech-stack) team does across devices before a website goes live, and we can audit and fix an existing site without rebuilding it.
+
+This article is a practical overview, not legal advice. If you have specific legal obligations, check them with a qualified adviser.
