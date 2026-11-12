@@ -1,6 +1,8 @@
 // @ts-check
 import { themes as prismThemes } from 'prism-react-renderer';
 import * as dotenv from 'dotenv';
+import fs from 'node:fs';
+import path from 'node:path';
 
 dotenv.config();
 
@@ -12,6 +14,48 @@ const config = {
 
   future: {
     v4: true,
+  },
+
+  markdown: {
+    parseFrontMatter: async (params) => {
+      const result = await params.defaultParseFrontMatter(params);
+      if (result.frontMatter) {
+        // Auto-encode URI spaces for images (e.g. /img/Nov 2026/...) or drop non-existent relative images
+        if (typeof result.frontMatter.image === 'string') {
+          if (result.frontMatter.image.startsWith('.')) {
+            const absPath = path.resolve(path.dirname(params.filePath), result.frontMatter.image);
+            if (!fs.existsSync(absPath)) {
+              delete result.frontMatter.image;
+            }
+          } else {
+            result.frontMatter.image = encodeURI(result.frontMatter.image);
+          }
+        }
+
+        // Support any author dynamically without failing if not in authors.yml
+        if (Array.isArray(result.frontMatter.authors)) {
+          const knownAuthorKeys = ['michael', 'Amir', 'Betty', 'Brook', 'Jonathan'];
+          result.frontMatter.authors = result.frontMatter.authors.map((author) => {
+            if (typeof author === 'string' && !knownAuthorKeys.includes(author)) {
+              return { name: author };
+            }
+            return author;
+          });
+        }
+      }
+
+      // Encode spaces in markdown image links so CommonMark renders them as real <img> tags instead of plain text
+      if (typeof result.content === 'string') {
+        result.content = result.content.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, url) => {
+          if (url.includes(' ') && !url.startsWith('<')) {
+            return `![${alt}](${encodeURI(url)})`;
+          }
+          return match;
+        });
+      }
+
+      return result;
+    },
   },
 
   url: 'https://www.zemenay.com',
