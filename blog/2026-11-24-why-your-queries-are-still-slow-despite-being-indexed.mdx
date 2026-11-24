@@ -1,0 +1,42 @@
+---
+slug: why-your-queries-are-still-slow-despite-being-indexed
+title: "Why Your Queries Are Still Slow, Despite Being Indexed"
+description: "Throwing a database index at a slow table is not a free performance upgrade. Learn the three hidden traps that keep indexed queries slow and how to profile them properly."
+authors: [Amir Abdulnasser]
+tags: [database-indexing, sql-performance, backend-engineering, query-optimization, software-architecture]
+image: ./img/why-your-queries-are-still-slow-despite-being-indexed.png
+---
+
+# Why Your Queries Are Still Slow, Despite Being Indexed
+
+If the production endpoint begins to lag, then it's the default developer reaction to throw a database index on the table and pray.
+
+In Distributed Engineering Teams, Blind Indexing is a shortcut that is often used in a hurry up deadline. In Offshore Software Development, it is common for developers to view indexes as a sort of free performance optimization without realising what is going on. In fact each index added is a separate data structure which should be modified on each write. If you add 10 unnecessary indexes to a slow table which is written to frequently, you just made yourself a bad SELECT / INSERT / UPDATE problem.
+
+## There are three reasons why indexes can let you down.
+
+If none of the three traps above are encountered, then one of these three traps is probably the culprit when an index is added and the query execution time does not change significantly:
+
+Wrong Column Order in Composite Indexes: Composite index (status, created_at) is left to right. If you are only using the created_at column in your query, then the database engine will not even use the index.
+
+Non-Sargable Queries: If you wrap an indexed column in a function - for example WHERE LOWER(email) = 'user@domain.com' or WHERE YEAR(created_at) = 2026 - then the database has to calculate the function for every row, and the index does not help at all.
+
+If there were 500 queries in an ORM loop per page load in the application, there's nothing that can be done about it with a single-row index. We should have the ability to do this, and good Asynchronous Work Strategies and code review can help to avoid the 'chatty ORM' situation in production.
+
+## The Architect's Query Playbook is available here.
+
+High performing Distributed Agile Teams are not satisfied to take the speed at which the database operates on their word, they measure it.
+
+Prior to creating any indexes, test the actual query with meaningful data on the EXPLAIN ANALYZE command. Look for unused indexes that are only taking up storage and have no effect on replication; and check for sequential scans on large tables, or analyze index selectivity. With clear standards for reviewing databases, your Remote Work Culture can be developed, and Remote Team Management is improved because engineers are not flooded with a multitude of “firefighting” latency alerts at night.
+
+Another benefit of query profile standardization is Remote Developer Onboarding, which gives new developers a checklist to get them up and running safely writing migrations from the outset. Unlike preventable outages, Remote Talent Retention is bound to rise with senior engineers not being burned out.
+
+---
+
+## Design HTS with Senior Engineering Staff
+
+Bad database performance has no place in the Future of Work, with an increasing need for strict audit trails and reliable and predictable database behavior required by the International Tech Compliance.
+
+Zemenay Tech is an International Tech company out of Ethiopia providing Elite IT Staff Augmentation, and Best Global Remote Talent services. With our Cross-Cultural Team Integration and Borderless Hiring, your tech team is optimized right from the outset, which means that your Tech Talent Acquisition is elevated with pragmatic backend engineers building scalable and clean queries from the start.
+
+Contact us today to get a free consultation.

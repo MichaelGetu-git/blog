@@ -1,0 +1,43 @@
+---
+slug: microservices-not-cure-for-bad-code-distributed-monolith
+title: "Microservices Are Not a Cure for Bad Code: Avoiding the Distributed Monolith"
+description: "Splitting a tangled codebase into twenty microservices does not fix bad architecture. Learn how to spot a distributed monolith and pivot to a modular monolith."
+authors: [Amir Abdulnasser]
+tags: [microservices, modular-monolith, software-architecture, distributed-systems, backend-engineering]
+image: ./img/microservices-not-cure-for-bad-code-distributed-monolith.png
+---
+
+# Microservices Are Not a Cure for Bad Code: Avoiding the Distributed Monolith
+
+A tangled code base is no excuse for having twenty microservices. It simply converts a quick in-memory function call into a flakey network request which may break at any moment.
+
+One of the worst enemies of software velocity is premature microservices, for Distributed Engineering Teams. One of the common misconceptions about scaling with Offshore Software Development is that by having each remote team with its own repository, there will be no need to deal with dependencies. In the real world, if your domain boundaries aren't well defined, your domain is not comprised of independent services—it's a distributed monolith.
+
+Instead of shipping features, your engineers have to deal with cascading timeouts, split transactions, and version mismatches between repositories. Remote Team Management becomes a coordination nightmare, and your Remote Work Culture turns into babysitting your infrastructure.
+
+## Four Signs You've Created a Distributed Monolith
+
+If you are not certain if your microservices are beneficial or not, go through the diagnostic checklist below:
+
+- **Lockstep Deployments:** Either Service B or Service C must be deployed at the same time as Service A is deployed, or the deployment must be done sequentially. Services need to move together and are one system with unnecessary network latency between them.
+- **Shared Database Tables:** Several microservices access the same schema in the database and share that access. This results in the loss of data ownership and breaks Asynchronous Work Strategies, forcing engineers in different time zones to synchronize themselves before even changing one column.
+- **Chatty API Chains:** 15 synchronous HTTP or gRPC calls are fired within internal services as a result of a single user call. One slow pod has the potential to ruin the entire user experience.
+- **Long and Painful Local Setup:** It takes 32GB of RAM and a rather complicated Docker Compose script to run the login screen locally with new hires. This ultimately makes Remote Developer Onboarding a week-long battle with infrastructure and hurts Remote Talent Retention as a side effect, as senior engineers burn out with local environment issues.
+
+## The Modular Monolith Pivot
+
+Distributed Agile Teams don't get started with microservices. They begin with a well-structured monolith, which is divided into modules.
+
+Code for a modular monolith is packaged in one deployable unit, but has rigid internal module barriers that maintain domain separation. Modules don't directly access the data layers of other modules, but rather communicate via explicit internal interfaces.
+
+The result is that everyone is on the same page—they all have access to the same source of truth, the same test suite, and the same deployment pipeline, making Cross-Cultural Team Integration easy. You have strict International Tech Compliance and security boundaries at the module level, just like before, but without the operational tax that distributed networking introduces before your traffic starts demanding it. Extracting a module to a standalone service is clean when it reaches the true limits of scalability, as the boundaries of the module are already there.
+
+---
+
+## Construct a Scalable Architecture with Vetted Engineering Capacity
+
+In the Future of Work, system architecture is half the equation. The other half is having the right engineers to do it without over-engineering.
+
+Zemenay Tech is an Ethiopian-based international tech company providing elite IT Staff Augmentation and the best Global Remote Talent. We are working with U.S. and European organisations to take their Tech Talent Acquisition to the next level with seamless Borderless Hiring, putting you in touch with pragmatic engineers who are interested in delivering at speed with clean architecture and maintainability as a priority, rather than hype.
+
+Call us now, and we will provide you a free consultation.
